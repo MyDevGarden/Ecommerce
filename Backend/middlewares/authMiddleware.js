@@ -5,7 +5,7 @@ import userModel from '../models/userModel.js';
 export const protectdSignIn = async(req,res,next) =>{
     try {
         const decode = JWT.verify(req.headers.authorization, process.env.JWT_SECRET);
-        req.user = decode;
+        req.user = decode;// get the decoded user details
         next();
     } catch (error) {
         console.log(error)
