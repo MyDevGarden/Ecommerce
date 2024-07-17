@@ -72,14 +72,6 @@
     background-color: rgb(210, 131, 28)
   }
 
-/* registerpage css*/
-  .register{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 70vh;
-    flex-direction: column;
-  }
 
   /* Footer css*/
   .footer{
