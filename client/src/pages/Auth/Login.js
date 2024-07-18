@@ -5,14 +5,16 @@ import toast from "react-hot-toast";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import "../../styles/authstyles.css";
+import { useAuth } from "../../context/authContext";
 
 
 const Login = () => {
    
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  
-const navigate = useNavigate();
+  const [auth, setAuth] = useAuth();
+
+  const navigate = useNavigate();
 
 //form function
 const handleSubmit = async (e) => {
@@ -25,6 +27,12 @@ const handleSubmit = async (e) => {
       );
       if(res.data.success){    //success and message is comming from authcontroller with responce
         toast.success(res.data.message)
+        setAuth({
+          ...auth,
+          user: res.data.user,
+          token: res.data.token,
+        });
+        localStorage.setItem('auth', JSON.stringify(res.data));
         navigate('/')
       }else{
         toast.error(res.data.message)
