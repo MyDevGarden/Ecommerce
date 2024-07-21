@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import Layout from "../../components/BasicLayout/Layout";
 import toast from "react-hot-toast";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import "../../styles/authstyles.css";
 import { useAuth } from "../../context/authContext";
 
@@ -13,7 +13,7 @@ const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [auth, setAuth] = useAuth();
-
+  const location= useLocation();
   const navigate = useNavigate();
 
 //form function
@@ -33,7 +33,7 @@ const handleSubmit = async (e) => {
           token: res.data.token,
         });
         localStorage.setItem('auth', JSON.stringify(res.data));
-        navigate('/')
+        navigate(location.state||'/')
       }else{
         toast.error(res.data.message)
       }

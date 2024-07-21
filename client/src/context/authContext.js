@@ -1,3 +1,4 @@
+import axios from "axios";
 import { useState, useEffect, useContext, createContext} from "react";
 
 //Maintain a globle state of authentication here
@@ -9,6 +10,9 @@ const AuthProvider = ({children}) => {
         token: "",
     });
 
+    //defaul axios
+    axios.defaults.headers.common['Authorization'] = auth?.token;
+    
     useEffect(()=>{
         const data =localStorage.getItem('auth');
         if(data){
@@ -19,7 +23,7 @@ const AuthProvider = ({children}) => {
                 token: parseData.token
             });
         }
-    },[auth]);
+    },[]);
 
     return(
         <AuthContext.Provider value={[auth, setAuth]}>

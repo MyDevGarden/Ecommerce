@@ -17,7 +17,7 @@ app.use(cors());
 app.use(express.json()); //middleware to parsing request body
 
 app.use(morgan('dev')); //middlware for morgan
-//app.use(cors());
+
 
 //routes
 app.use('/api/v1/auth', authroute);
