@@ -8,6 +8,7 @@ import SignUp from './pages/Auth/SignUp';
 import Login from './pages/Auth/Login';
 import Dashboard from './pages/user/Dashboard';
 import MakePrivateRoute from './components/Routes/PrivateRoute';
+import ForgotPassword from './pages/Auth/ForgotPassword';
 
 
 function App() {
@@ -20,6 +21,7 @@ function App() {
         </Route>
       
       <Route path='/signup' element={<SignUp/>}/>
+      <Route path='/forgot-pwd' element={<ForgotPassword />}/>
       <Route path='/login' element={<Login/>}/>
       <Route path='/about' element={<About/>}/>
       <Route path='/Contact' element={<Contact/>}/>

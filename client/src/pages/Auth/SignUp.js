@@ -11,6 +11,7 @@ const SignUp = () => {
   const [password, setPassword] = useState("");
   const [phno, setPhno] = useState("");
   const [addr, setAddr] = useState("");
+  const [answer, setAnswer] = useState("");
 const navigate = useNavigate();
   //form function
   const handleSubmit = async (e) => {
@@ -18,7 +19,7 @@ const navigate = useNavigate();
     try {
       const res = await axios.post(
         `${process.env.REACT_APP_API}/api/v1/auth/register`,
-        { name, email, password, phno, addr }
+        { name, email, password, phno, addr, answer }
         
       );
       if(res.data.success){    //success and message is comming from authcontroller with responce
@@ -95,6 +96,17 @@ const navigate = useNavigate();
               className="form-control"
               id="exampleInputaddr"
               placeholder="Enter address"
+              required
+            />
+          </div>
+          <div className="mb-3">
+            <input
+              type="text"
+              value={answer}
+              onChange={(e) => setAnswer(e.target.value)}
+              className="form-control"
+              id="exampleInputanswer"
+              placeholder="What is your mothers name"
               required
             />
           </div>

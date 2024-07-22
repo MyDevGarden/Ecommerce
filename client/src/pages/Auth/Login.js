@@ -25,8 +25,8 @@ const handleSubmit = async (e) => {
         {  email, password }
         
       );
-      if(res.data.success){    //success and message is comming from authcontroller with responce
-        toast.success(res.data.message)
+      if(res && res.data.success){    //success and message is comming from authcontroller with responce
+        toast.success(res.data && res.data.message)
         setAuth({
           ...auth,
           user: res.data.user,
@@ -71,8 +71,13 @@ const handleSubmit = async (e) => {
               required
             />
           </div>
-          
+          <div className="mb-3">
+          <button type="submit" className="btn btn-primary" onClick={()=> {navigate('/forgot-pwd')}}>
+            Forgot Password
+          </button>
+          </div>
 
+          
           <button type="submit" className="btn btn-primary">
             Login
           </button>
