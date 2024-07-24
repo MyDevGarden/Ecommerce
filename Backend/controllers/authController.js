@@ -91,10 +91,12 @@ export const loginController = async (req, res) => {
             success: true,
             message: ' Login successfull',
             user:{
+                _id: user._id,
                 name: user.name,
                 email:user.email,
                 phno:user.phno,
                 addr:user.addr,
+                role:user.role,
             },
             token,
         });
