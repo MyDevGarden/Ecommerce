@@ -4,7 +4,7 @@ import fs from "fs";
 
 export const addProductController = async (req, res) => {
   try {
-    const { name, slug, desc, price, category, quantity, shipping } =
+    const { name, desc, price, category, quantity } =
       req.fields;
     const { photo } = req.files;
     //validations
@@ -133,7 +133,7 @@ export const deleteProductController = async(req, res) =>{
 //update product
 export const updateProductController= async(req, res)=>{
     try {
-        const { name, slug, desc, price, category, quantity, shipping } =
+        const { name, desc, price, category, quantity } =
           req.fields;
         const { photo } = req.files;
         //validations
