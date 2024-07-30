@@ -91,3 +91,10 @@
     color: rgb(191, 230, 217);
 
   }
+
+  /*product card css */
+  .product-link{
+    text-decoration: none !important;
+    color: black !important;
+    height: 10px !important;
+  }
