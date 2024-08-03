@@ -19,6 +19,7 @@ import Profile from './pages/user/Profile';
 import Products from './pages/admin/Products';
 import UpdateProduct from './pages/admin/UpdateProduct';
 import SearchBox from './pages/SearchBox';
+import ProductDetails from './pages/ProductDetails';
 
 
 function App() {
@@ -27,6 +28,7 @@ function App() {
     <Routes>
       <Route path='/' element={<HomePage/>}/>
       <Route path='/search' element={<SearchBox/>}/>
+      <Route path='/product/:slug' element={<ProductDetails/>}/>
       <Route path='/dashboard' element={<MakePrivateRoute/>}>
         <Route path='user' element={<Dashboard/>}/>
         <Route path='user/profile' element={<Profile/>}/> 

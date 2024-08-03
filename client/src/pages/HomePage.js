@@ -1,12 +1,12 @@
 import React,{useState,useEffect} from "react";
 import Layout from "../components/BasicLayout/Layout";
-
+import  {useNavigate} from 'react-router-dom';
 import axios from "axios";
 import {Checkbox, Radio} from 'antd'
 import { Prices } from "../components/PriceFilter";
 
 const HomePage = () => {
-
+  const navigate = useNavigate();
   const[categories, setCategories] = useState([]);
   const[products, setProducts] = useState([]);
   const[selected, setSelected] = useState([]);
@@ -161,7 +161,7 @@ const HomePage = () => {
                     <h5 className="card-title">{p.name}</h5>
                     <p className="card-text">{p.desc.substring(0,30)}</p>
                     <p className="card-text">Rs. {p.price}</p>
-                    <button className="btn btn-primary ms-1">More Details</button>
+                    <button className="btn btn-primary ms-1" onClick={()=> navigate(`/product/${p.slug}`)}>More Details</button>
                     <button className="btn btn-secondary ms-1">Add to Cart</button>
                   </div>
                 </div>

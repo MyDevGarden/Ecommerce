@@ -257,7 +257,29 @@ export const searchProductController = async (req,res) =>{
     console.log(error);
     res.status(400).send({
       succes: false,
-      message: "Error in sdearching peoducts",
+      message: "Error in searching peoducts",
+      error,
+    });
+  }
+}
+
+//retriving similar products
+export const similarProductController = async(req, res) =>{
+  try {
+    const {pid, cid} = req.params
+    const products = await productModel.find({
+      category : cid,
+      _id:{$ne:pid}, //not including the product whose similar product we are retriving
+    }).select('-photo').limit(3).populate('category') // popolate depending upon category
+    res.status(200).send({
+      success:true,
+      products,
+    })
+  } catch (error) {
+    console.log(error);
+    res.status(400).send({
+      succes: false,
+      message: "Error in getting similar peoducts",
       error,
     });
   }
