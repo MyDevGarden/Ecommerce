@@ -157,3 +157,36 @@ export const forgotpwdController = async (req, res) => {
 export const testController = (req,res) =>{
     res.send('protected route');
 }
+
+
+//update profile controller
+export const updateProfileController = async(req,res) =>{
+    try {
+        const {name,email,password, phno,addr} = req.body;
+        const user = await userModel.findById(req.user._id)
+        //check password
+        if(password && password.length < 6)
+        {
+            return res.json({error: 'Password is required'})
+        }
+        const hashedPassword = password ? await hashPwd(password) : undefined;
+        const updatedUser= await userModel.findByIdAndUpdate(req.user._id,{
+            name: name || user.name,
+            password : hashedPassword || user.password,
+            phno : phno || user.phno,
+            addr : addr || user.addr
+        },{new:true});
+        res.status(200).send({
+            success: true,
+            message: "Profile updated Successfully",
+            updatedUser,
+          });
+    } catch (error) { 
+        console.log(error)
+        res.status(500).send({
+            success: false,
+            message: "Something went wrong",
+            error,
+          });
+    }
+}
