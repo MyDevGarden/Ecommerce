@@ -1,5 +1,5 @@
 import express from 'express'
-import {registerController, loginController, testController, forgotpwdController, updateProfileController} from '../controllers/authController.js'
+import {registerController, loginController, testController, forgotpwdController, updateProfileController, getOrderController, getAllOrderController, orderStatusController} from '../controllers/authController.js'
 import {isAdmin, protectdSignIn} from '../middlewares/authMiddleware.js'
 const router = express.Router();
 
@@ -28,5 +28,14 @@ router.get('/admin-auth', protectdSignIn, isAdmin,   (req,res) =>{
 })
 //protected route to update Profile
 router.put('/profile', protectdSignIn , updateProfileController)
+
+//protectes route to get order list
+router.get('/orders', protectdSignIn, getOrderController)
+
+//protectes route to get order list
+router.get('/all-orders', protectdSignIn, isAdmin, getAllOrderController)
+
+//protectes route for order status update
+router.put('/order-status/:orderId', protectdSignIn, isAdmin, orderStatusController)
 
 export default router;

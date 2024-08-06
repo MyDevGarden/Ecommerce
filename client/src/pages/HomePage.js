@@ -6,6 +6,7 @@ import {Checkbox, Radio} from 'antd'
 import { Prices } from "../components/PriceFilter";
 import {useCart} from "../context/cartContext";
 import toast from "react-hot-toast";
+import "../styles/homestyle.css";
 
 const HomePage = () => {
   const navigate = useNavigate();
