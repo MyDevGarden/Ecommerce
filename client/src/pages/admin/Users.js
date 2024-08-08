@@ -6,7 +6,7 @@ import axios from "axios";
 
 const Users = () => {
   const [user, setUser] = useState([]);
-  const [auth, setAuth] = useAuth();
+  const [auth] = useAuth();
 
   const getUsers = async () => {
     try {

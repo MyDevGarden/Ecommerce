@@ -1,43 +1,64 @@
-# Getting Started with Create React App
+# My PlantStore App
+This is a sample application that demonstrates an E-commerce website using the MEAN stack. The application loads products a MongoDB database and displays them. Users can select to display products in a single category as well as can filter products according to category or price. Users can click on any product to get more information about the products and can see similar products . Users can select items and add them to their shopping cart
+
+**Features**
+
+1. Product Categories
+2. Login Authentication
+3. Admin Dashboard
+4. User Dashboard
+5. Intercative shopping cart
+6. Checkout options with credit card and gpay
+7. Order Processing
+
+**Tools Used**
+1. ReactJS
+2. ExpressJS
+3. NodeJS
+4. MongoDB
+5. Bootstrap css
+
+
+## Live Demonstration
+The E-commerce demo can be viewed online here.
+>[working Demo](http://)
+# Getting Started 
+
+### Instructions
+1. To get started you can simply clone this ecommerce-demo repository and install the dependencies.
+
+Clone the ecommerce-demo repository using git:
+
+git clone https://github.com/MyDevGarden/Ecommerce
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
 
-In the project directory, you can run:
 
-### `npm start`
+2. In the project directory, from backend folder you can run: ``npm run dev``
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## For Payment getway integration 
+### create a sandbox account by signing in
+(https://sandbox.braintreegateway.com/login)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Get the 'Merchant Id', 'public key' and 'private key'
+### Create a .env file in your backend folder and paste all secret keys in it
 
-### `npm test`
+.env file
+PORT = 'Port you want to run your server'
+MONGO_URL = 'Url for your mangodb atlus databse'
+JWT_SECRET = 'your secret key to generate JWT token'
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+BRAINTREE_PUBLIC_KEY = 'Your public key'
+BRAINTREE_PRIVATE_KEY = 'your private key'
+BRAINTREE_MERCHANT_ID = 'your merchant id'
 
-### `npm run build`
+### Create a .env file in your frontend folder and paste all secret keys in it
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+.env file
+REACT_APP_API = http://localhost:your server port no
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
 ## Learn More
 
