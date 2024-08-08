@@ -120,7 +120,7 @@ const UpdateProduct = () => {
                 placeholder="Select a Category"
                 size="large"
                 showSearch
-                className="form-select mb-3"
+                className="form-select mb-3 bg-warning"
                 onChange={(value) => {
                   setCategory(value);
                 }}
@@ -170,7 +170,7 @@ const UpdateProduct = () => {
                   type="text"
                   value={name}
                   placeholder="Enter name"
-                  className="form-control"
+                  className="form-control bg-warning"
                   onChange={(e) => setName(e.target.value)}
                 />
               </div>
@@ -179,7 +179,7 @@ const UpdateProduct = () => {
                   type="text"
                   value={desc}
                   placeholder="Enter description"
-                  className="form-control"
+                  className="form-control bg-warning"
                   onChange={(e) => setDesc(e.target.value)}
                 />
               </div>
@@ -189,7 +189,7 @@ const UpdateProduct = () => {
                   type="number"
                   value={price}
                   placeholder="Enter Price"
-                  className="form-control"
+                  className="form-control bg-warning"
                   onChange={(e) => setPrice(e.target.value)}
                 />
               </div>
@@ -198,7 +198,7 @@ const UpdateProduct = () => {
                   type="number"
                   value={quantity}
                   placeholder="Enter quantity"
-                  className="form-control"
+                  className="form-control bg-warning"
                   onChange={(e) => setQuantity(e.target.value)}
                 />
               </div>
@@ -207,7 +207,7 @@ const UpdateProduct = () => {
                   placeholder="Select Shipping "
                   size="large"
                   showSearch
-                  className="form-select mb-3"
+                  className="form-select mb-3 bg-warning"
                   onChange={(value) => {
                     setShipping(value);
                   }}
@@ -218,10 +218,10 @@ const UpdateProduct = () => {
                 </Select>
               </div>
               <div className="mb-3">
-                <button className="btn btn-primary" onClick={handleUpdate}>
+                <button className="btn btn-secondary m-3" onClick={handleUpdate}>
                   UPDATE PRODUCT
                 </button>
-                <button className="btn btn-danger" onClick={handleDelete}>
+                <button className="btn btn-danger m-3" onClick={handleDelete}>
                   DELETE PRODUCT
                 </button>
               </div>

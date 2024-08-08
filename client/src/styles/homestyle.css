@@ -1,9 +1,97 @@
-.row {
-display: flex;
+.banner-img {
+    margin-top: 80px;
+  }
+  
+  .home-page h1 {
+    color: rgb(247, 145, 10);
     
-    justify-content: center;
+  }
+  
+  .home-page {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 20px;
+
+  }
+
+  .card{
+    background-color:rgb(236, 190, 74);
+  }
+.card-body {
+ 
+    border-bottom-right-radius: 15px;
+    background-color: rgb(236, 190, 74);
+    width:18rem;
+  }
+
+
+  
+  .card-name-price {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  
+  .card-price {
+    color: rgb(204, 211, 204);
+    font-weight: bold;
+  }
+  .home-page button {
+    border-radius: 0;
+    width: 100%;
+    border-top-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    font-size: 14px;
+    font-weight: bold;
+  }
+  
+  .card-text {
+    color: rgb(20, 9, 9);
+  }
+  
+  .card img:hover {
+    transform: scale(0.9);
+    border-radius: 40;
+  }
+  
+  .card-img-top {
+    height: 300px !important;
+  }
+
+  .btn-custom{
+    background-color: rgb(247, 145, 10);
+  }
+  /* ==================
+  filters
+  ============== */
+  .filters h4 {
+    margin-top: 70px;
     
-   
-    background-color: aquamarine;
-    background-image: linear-gradient(0deg, rgb(181, 241, 221) 0%, rgb(220, 220, 84) 100%);
-}
+    color: rgb(247, 145, 10) !important;
+    
+    border-bottom: 1px solid rgba(128, 128, 128, 0.337);
+  }
+  
+  .ant-checkbox-wrapper:first-of-type {
+    margin-left: 25px;
+    font-size:large ;
+  }
+  
+  .ant-checkbox-wrapper {
+    margin: 8px;
+  }
+  .ant-radio-wrapper {
+    margin-bottom: 15px !important;
+    margin-left: 25px;
+    font-size:large ;
+  }
+  
+  .filters button {
+    background-color: rgb(247, 145, 10);
+    width: 100%;
+    border: none;
+    border-radius: 0;
+    margin-top: 20px;
+  }
+  
+ 

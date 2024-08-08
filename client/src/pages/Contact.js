@@ -6,13 +6,14 @@ const Contact = () => {
   return (
     <Layout title={'Contact Us - plantstore app'}>
       <div className="row contactus" >
-        <div className="col-md-6" style={{border: "1px solid, black"}}>
+      <h1 className="bg-success p2 text-white text-center">CONTACT US</h1>
+        <div className="m-3 p-3" style={{border: "1px solid, black"}}>
         
         <img src='./images/contact.jpg' alt="contact" style={{width :"100%"}}/>
       
         </div>
-        <div className="col-md-4" style={{border: "1px solid, black"}}>
-          <h1 className="bg-success p2 text-white text-center">CONTACT US</h1>
+        <div className="m-3" style={{border: "1px solid, black"}}>
+          
           <p className="text-justify mt-2">
             For any query or help please feel free to call
           </p>

@@ -6,6 +6,7 @@ import toast from "react-hot-toast";
 import SearchInputBox from "../Forms/SearchInputBox";
 import useCategory from "../../hooks/useCategory";
 import {Badge} from 'antd'
+import bannar from '../../images/Bannar/bannar2.webp'
 
 const Header = () => {
   const [auth, setAuth] = useAuth();
@@ -42,7 +43,7 @@ const Header = () => {
             </Link>
             <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
               <SearchInputBox />
-              <li className="nav-item">
+              <li className="nav-item ms-5">
                 <NavLink to="/" className="nav-link">
                   Home
                 </NavLink>
@@ -56,16 +57,13 @@ const Header = () => {
                   Categories
                 </Link>
                 <ul className="dropdown-menu">
-                  <li>
-                    <Link className="dropdown-item" to={"/categories"}>
-                      All Categories
-                    </Link>
-                  </li>
+                  
                   {categories?.map((c) => (
-                    <li>
+                    <li  key={c._id}>
                       <Link
                         className="dropdown-item"
                         to={`/category/${c.slug}`}
+                       
                       >
                         {c.name}
                       </Link>
@@ -136,6 +134,7 @@ const Header = () => {
           </div>
         </div>
       </nav>
+      <div><img src={bannar} alt = "mydreams" width={"100%"} height="200"/></div>
     </>
   );
 };

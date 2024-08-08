@@ -3,12 +3,13 @@ import Layout from '../../components/BasicLayout/Layout'
 import MenuUser from '../../components/BasicLayout/MenuUser'
 import axios from 'axios'
 import { useAuth } from '../../context/authContext'
+import '../../styles/dashcard.css'
 
 import moment from "moment";
 
 const Orders = () => {
   const[orders, setOrders] = useState();
-  const [auth, setAuth] = useAuth();
+  const [auth] = useAuth();
   const getOrders = async() =>{
     try {
       const {data} = await axios.get(
@@ -35,7 +36,7 @@ const Orders = () => {
                 {orders?.map((o, i) => {
               return (
                 <div className="border shadow">
-                  <table className="table">
+                  <table className="table table-warning">
                     <thead>
                       <tr>
                         <th scope="col">#</th>
@@ -51,7 +52,7 @@ const Orders = () => {
                         <td>{i + 1}</td>
                         <td>{o?.status}</td>
                         <td>{o?.buyer?.name}</td>
-                        <td>{moment(o?.createAt).fromNow()}</td>
+                        <td>{moment(o?.createdAt).fromNow()}</td>
                         <td>{o?.payment.success ? "Success" : "Failed"}</td>
                         <td>{o?.products?.length}</td>
                       </tr>
@@ -59,20 +60,21 @@ const Orders = () => {
                   </table>
                   <div className="container">
                     {o?.products?.map((p, i) => (
-                      <div className="row mb-2 p-3 card flex-row" key={p._id}>
-                        <div className="col-md-4">
-                          <img
-                            src={`${process.env.REACT_APP_API}/api/v1/product/photo-product/${p._id}`}
-                            className="card-img-top"
-                            alt={p.name}
-                            width="100px"
-                            height={"100px"}
-                          />
-                        </div>
+                      <div className="row mb-2 p-3  flex-row  bg-warning" key={p._id}>
+                      <div className="col-md-4">
+                        <img
+                          src={`${process.env.REACT_APP_API}/api/v1/product/photo-product/${p._id}`}
+                          className=""
+                          alt={p.name}
+                          width="100px"
+                          height={"100px"}
+                        />
+                      </div>
+                        
                         <div className="col-md-8">
                           <p>{p.name}</p>
                           <p>{p.desc.substring(0, 30)}</p>
-                          <p>Price : {p.price}</p>
+                          <p>Price : Rs.{p.price}</p>
                         </div>
                       </div>
                     ))}

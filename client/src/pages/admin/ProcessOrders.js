@@ -9,16 +9,16 @@ import { Select } from "antd";
 const { Option } = Select;
 
 const ProcessOrders = () => {
-  const [status, setStatus] = useState([
+  const [status] = useState([
     "Not Process",
     "Processing",
     "Shipped",
     "deliverd",
     "cancel",
   ]);
-  const [changeStatus, setChangeStatus] = useState("");
+  
   const [orders, setOrders] = useState([]);
-  const [auth, setAuth] = useAuth();
+  const [auth] = useAuth();
 
   const getOrders = async () => {
     try {
@@ -40,6 +40,8 @@ const ProcessOrders = () => {
         const { data } = await axios.put(
             `${process.env.REACT_APP_API}/api/v1/auth/order-status/${oid}`, {status:val}
           );
+          if(data)
+            toast.success("Order status changed sucessfully")
           getOrders();
     } catch (error) {
         console.log(error);
@@ -57,7 +59,7 @@ const ProcessOrders = () => {
           {orders?.map((o, i) => {
             return (
               <div className="border shadow">
-                <table className="table">
+                <table className="table table-warning">
                   <thead>
                     <tr>
                       <th scope="col">#</th>
@@ -87,7 +89,7 @@ const ProcessOrders = () => {
                         </Select>
                       </td>
                       <td>{o?.buyer?.name}</td>
-                      <td>{moment(o?.createAt).fromNow()}</td>
+                      <td>{moment(o?.createdAt).fromNow()}</td>
                       <td>{o?.payment.success ? "Success" : "Failed"}</td>
                       <td>{o?.products?.length}</td>
                     </tr>
@@ -95,11 +97,11 @@ const ProcessOrders = () => {
                 </table>
                 <div className="container">
                   {o?.products?.map((p, i) => (
-                    <div className="row mb-2 p-3 card flex-row" key={p._id}>
+                    <div className="row mb-2 p-3  flex-row  bg-warning" key={p._id}>
                       <div className="col-md-4">
                         <img
                           src={`${process.env.REACT_APP_API}/api/v1/product/photo-product/${p._id}`}
-                          className="card-img-top"
+                          className=""
                           alt={p.name}
                           width="100px"
                           height={"100px"}

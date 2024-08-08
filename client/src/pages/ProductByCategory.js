@@ -33,7 +33,7 @@ const ProductByCategory = () => {
           {products?.map((p) => (
               
               
-                <div className="card m-2" style={{ width: "18rem"}}>
+                <div className="card m-2" style={{ width: "18rem"}} key={p._id}>
                   <img src={`${process.env.REACT_APP_API}/api/v1/product/photo-product/${p._id}`} className="card-img-top" style={{ width: "18rem", height: "20rem"}} alt={p.name} />
                   <div className="card-body">
                     <h5 className="card-title">{p.name}</h5>

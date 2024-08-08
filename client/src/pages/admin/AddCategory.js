@@ -5,6 +5,7 @@ import toast from "react-hot-toast";
 import axios from "axios";
 import CategoryForm from "../../components/Forms/CategoryForm";
 import { Modal } from 'antd'
+import '../../styles/dashcard.css'
 
 const AddCategory = () => {
   const [categories, setCategories] = useState([]);
@@ -98,7 +99,7 @@ const AddCategory = () => {
               <CategoryForm handleSubmit={handleSubmit} value={name} setValue={setName}/>
             </div>
             <div className="w-75">
-              <table className="table">
+              <table className="table table-warning table-striped">
                 <thead>
                   <tr>
                     <th scope="col">Name</th>
@@ -109,10 +110,10 @@ const AddCategory = () => {
                 <tbody>
                   {categories?.map((c) => (
                     <>
-                      <tr>
-                        <td key={c._id}>{c.name}</td>
+                      <tr key={c._id}>
+                        <td >{c.name}</td>
                         <td>
-                          <button className="btn btn-primary ms-2" onClick={() => {setModalOpen(true) ; setUpdatedName(c.name); setSelected(c)}}>Edit</button>
+                          <button className="btn btn-secondary ms-2" onClick={() => {setModalOpen(true) ; setUpdatedName(c.name); setSelected(c)}}>Edit</button>
                           <button className="btn btn-danger ms-2" onClick={()=>handleDelete(c._id)}>Delete</button>
                         </td>
                       </tr>

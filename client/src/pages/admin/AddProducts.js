@@ -81,7 +81,7 @@ const AddProducts = () => {
                 placeholder="Select a Category"
                 size="large"
                 showSearch
-                className="form-select mb-3"
+                className="form-select mb-3 bg-warning"
                 onChange={(value) => {
                   setCategory(value);
                 }}
@@ -117,12 +117,12 @@ const AddProducts = () => {
                   </div>
                 )}
               </div>
-              <div className="mb-3">
+              <div className="mb-3 ">
                 <input
                   type="text"
                   value={name}
                   placeholder="Enter name"
-                  className="form-control"
+                  className="form-control bg-warning"
                   onChange={(e) => setName(e.target.value)}
                 />
               </div>
@@ -131,7 +131,7 @@ const AddProducts = () => {
                   type="text"
                   value={desc}
                   placeholder="Enter description"
-                  className="form-control"
+                  className="form-control bg-warning"
                   onChange={(e) => setDesc(e.target.value)}
                 />
               </div>
@@ -141,7 +141,7 @@ const AddProducts = () => {
                   type="number"
                   value={price}
                   placeholder="Enter Price"
-                  className="form-control"
+                  className="form-control bg-warning"
                   onChange={(e) => setPrice(e.target.value)}
                 />
               </div>
@@ -150,7 +150,7 @@ const AddProducts = () => {
                   type="number"
                   value={quantity}
                   placeholder="Enter quantity"
-                  className="form-control"
+                  className="form-control bg-warning"
                   onChange={(e) => setQuantity(e.target.value)}
                 />
               </div>
@@ -160,7 +160,7 @@ const AddProducts = () => {
                   placeholder="Select Shipping "
                   size="large"
                   showSearch
-                  className="form-select mb-3"
+                  className="form-select mb-3 bg-warning"
                   onChange={(value) => {
                     setShipping(value);
                   }}

@@ -2,7 +2,7 @@ import React from 'react'
 import Layout from '../../components/BasicLayout/Layout'
 import { useAuth } from '../../context/authContext'
 import MenuAdmin from '../../components/BasicLayout/MenuAdmin'
-
+import '../../styles/dashcard.css'
 const AdminDashboard = () => {
   const [auth] =useAuth();
   return (
@@ -13,7 +13,7 @@ const AdminDashboard = () => {
               <MenuAdmin/>
             </div>
             <div className='col-md-9'>
-              <div className='card w-75 p-3'>
+              <div className='card p-3 text dashcard'>
                 
               <h3>Name : {auth?.user?.name}</h3>
               <h3>email : {auth?.user?.email}</h3>

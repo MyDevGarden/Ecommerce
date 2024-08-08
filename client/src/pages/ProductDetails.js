@@ -37,14 +37,14 @@ const ProductDetails = () => {
   return (
     <Layout>
        <div className='row container mt-2'>
-        <div className='col-md-6'>
+        <div className='col-md-6 m-5'>
             <img src={`${process.env.REACT_APP_API}/api/v1/product/photo-product/${product._id}`} className='card-img-top' alt={product.name} height={'400'} width={'400'}/>
         </div>
-        <div className='col-md-6 text-center'>
+        <div className='col-md-5 text-center mt-5'>
             <h4>Product Details</h4>
             <h5>Name : {product.name}</h5>
             <h5>Decription : {product.desc}</h5>
-            <h5>Price : {product.price}</h5>
+            <h5>Price : Rs. {product.price}</h5>
           
            <h5>Category : {product?.category?.name}</h5>
            <button className="btn btn-secondary ms-1">Add to Cart</button>

@@ -1,6 +1,7 @@
-import { Layout } from 'antd'
+import Layout from "../components/BasicLayout/Layout";
 import React from 'react'
 import { useSearch } from '../context/searchContext'
+import "../styles/homestyle.css";
 
 const SearchBox = () => {
     const [values, setValues] = useSearch()

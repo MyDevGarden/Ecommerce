@@ -9,7 +9,7 @@ import toast from "react-hot-toast";
 
 const Cart = () => {
   const [cart, setCart] = useCart();
-  const [auth, setAuth] = useAuth();
+  const [auth] = useAuth();
   const [clientToken, setClientToken] = useState("");
   const [instance, setInstance] = useState("");
   const [loading, setLoading] = useState(false);
@@ -58,11 +58,14 @@ const Cart = () => {
           cart,
         }
       );
-      setLoading(false);
-      localStorage.removeItem("cart");
-      setCart([]);
-      navigate(`/dashboard/user/orders`);
-      toast.success("Payment Completed Successfully ");
+      if(data){
+        setLoading(false);
+        localStorage.removeItem("cart");
+        setCart([]);
+        navigate(`/dashboard/user/orders`);
+        toast.success("Payment Completed Successfully ");
+      }
+      
     } catch (error) {
       console.log(error);
       setLoading(false);
@@ -87,7 +90,7 @@ const Cart = () => {
       <div className="container">
         <div className="row">
           <div className="col-md-12">
-            <h1 className="text-center bg-light p-2 mb-1">
+            <h1 className="text-center bg-warning p-2 mb-1">
               {`Hello ${auth?.token && auth?.user?.name}`}
             </h1>
             <h4 className="text-center">
@@ -100,18 +103,18 @@ const Cart = () => {
           </div>
         </div>
         <div className="row">
-          <div className="col-md-6">
+          <div className="col-md-7">
             {cart?.map((p) => (
-              <div className="row mb-2 card flex-row">
-                <div className="col-md-4">
+              <div className="row mb-3 card flex-row" key={p._id}>
+                <div className="col-md-5">
                   <img
                     src={`${process.env.REACT_APP_API}/api/v1/product/photo-product/${p._id}`}
                     className="card-img-top"
-                    style={{ width: "10rem", height: "10rem" }}
+                    style={{ width: "15rem", height: "10rem" }}
                     alt={p.name}
                   />
                 </div>
-                <div className="col-md-8">
+                <div className="col-md-7 text-center mt-5">
                   <p>{p.name}</p>
                   <p>{p.desc.substring(0, 30)}</p>
                   <p>Price : {p.price}</p>
@@ -151,7 +154,7 @@ const Cart = () => {
               <div className="mb-3">
                 {auth?.token ? (
                   <button
-                    className="btn btn-outline-warning"
+                    className="btn btn-outline-danger"
                     onClick={() => navigate("/dashboard/user/profile")}
                   >
                     Update Address
@@ -192,7 +195,7 @@ const Cart = () => {
                   />
 
                   <button
-                    className="btn btn-primary"
+                    className="btn btn-secondary"
                     onClick={handlePayment}
                     
                   >

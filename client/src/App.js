@@ -20,7 +20,7 @@ import Products from './pages/admin/Products';
 import UpdateProduct from './pages/admin/UpdateProduct';
 import SearchBox from './pages/SearchBox';
 import ProductDetails from './pages/ProductDetails';
-import Allcategories from './pages/Allcategories';
+
 import ProductByCategory from './pages/ProductByCategory';
 import Cart from './pages/Cart';
 import ProcessOrders from './pages/admin/ProcessOrders';
@@ -33,7 +33,7 @@ function App() {
       <Route path='/' element={<HomePage/>}/>
       <Route path='/search' element={<SearchBox/>}/>
       <Route path='/cart' element={<Cart/>}/>
-      <Route path='/categories' element={<Allcategories/>}/>
+      
       <Route path='/category/:slug' element={<ProductByCategory/>}/>
       <Route path='/product/:slug' element={<ProductDetails/>}/>
       <Route path='/dashboard' element={<MakePrivateRoute/>}>
