@@ -6,7 +6,7 @@ import axios from "axios";
 
 const Users = () => {
   const [user, setUser] = useState([]);
-  const [auth] = useAuth();
+  const [auth, setAuth] = useAuth();
 
   const getUsers = async () => {
     try {
@@ -34,7 +34,7 @@ const Users = () => {
           <h1 className="text-center">All Users</h1>
           {user?.map((o, i) => {
             return (
-              <div className="border shadow">
+              <div className="border shadow" key={i}>
                 <table className="table table-warning">
                   <thead>
                     <tr>

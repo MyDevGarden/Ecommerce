@@ -18,7 +18,7 @@
     background-color:rgb(236, 190, 74);
   }
 .card-body {
- 
+    
     border-bottom-right-radius: 15px;
     background-color: rgb(236, 190, 74);
     width:18rem;
@@ -93,5 +93,6 @@
     border-radius: 0;
     margin-top: 20px;
   }
+
   
  

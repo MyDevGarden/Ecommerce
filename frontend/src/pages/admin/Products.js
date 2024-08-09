@@ -4,7 +4,7 @@ import MenuAdmin from "../../components/BasicLayout/MenuAdmin";
 import axios from "axios";
 import toast from "react-hot-toast";
 import { Link } from "react-router-dom";
-
+import "../../styles/homestyle.css";
 
 const Products = () => {
   const [products, setProducts] = useState([]);
@@ -29,7 +29,7 @@ const Products = () => {
 
   return (
     <Layout title={"Dashboard-All Products"}>
-      <div className="row">
+      <div className="row dashboard">
         <div className="col-md-3">
           <MenuAdmin />
         </div>

@@ -34,11 +34,7 @@ const navigate = useNavigate();
     }
   };
 
-  /*const handleLogin = (e) =>{
-    e.preventDefault();
-    navigate('/login');
-  }*/
-
+ 
   return (
     <Layout title={"Registration"}>
       <div className="form-container">

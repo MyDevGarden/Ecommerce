@@ -24,11 +24,6 @@ const Layout = ({children, title='Platstore app', desc='mern stack project', key
   )
 }
 
-/*Layout.defaultProps = {
-  title: 'Platstore app',
-  desc: 'mern stack project',
-  keywords: 'mern,react,node,mongo,express',
-  author: 'Mydreams',
-}*/
+
 
 export default Layout

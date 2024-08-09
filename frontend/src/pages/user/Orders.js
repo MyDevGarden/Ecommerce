@@ -9,7 +9,7 @@ import moment from "moment";
 
 const Orders = () => {
   const[orders, setOrders] = useState();
-  const [auth] = useAuth();
+  const [auth, setAuth] = useAuth();
   const getOrders = async() =>{
     try {
       const {data} = await axios.get(
@@ -35,10 +35,10 @@ const Orders = () => {
                 <h1 className='text-center'>All Orders</h1>
                 {orders?.map((o, i) => {
               return (
-                <div className="border shadow">
+                <div className="border shadow"  key={o._id}>
                   <table className="table table-warning">
                     <thead>
-                      <tr>
+                      <tr >
                         <th scope="col">#</th>
                         <th scope="col">Status</th>
                         <th scope="col">Buyer</th>

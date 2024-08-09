@@ -71,6 +71,7 @@ const HomePage = () => {
   useEffect(() => {
     if (page === 1) return;
     loadMore();
+    
   }, [page]);
 
   //load more products
@@ -96,7 +97,7 @@ const HomePage = () => {
       all = all.filter((c) => c !== id);
     }
     setSelected(all);
-    console.log(selected);
+    
   };
 
   useEffect(() => {

@@ -9,7 +9,7 @@ import toast from "react-hot-toast";
 
 const Cart = () => {
   const [cart, setCart] = useCart();
-  const [auth] = useAuth();
+  const [auth, setAuth] = useAuth();
   const [clientToken, setClientToken] = useState("");
   const [instance, setInstance] = useState("");
   const [loading, setLoading] = useState(false);

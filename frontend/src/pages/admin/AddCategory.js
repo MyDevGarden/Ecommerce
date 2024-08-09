@@ -65,6 +65,8 @@ const AddCategory = () => {
         setUpdatedName("")
         setModalOpen(false)
         getAllCategory();
+      }else{
+        toast.error(data.message)
       }
     } catch (error) {
       toast.error('something went wrong')
@@ -80,6 +82,8 @@ const AddCategory = () => {
       if(data.success){
         toast.success(`category is deleted`)
         getAllCategory();
+      }else {
+        toast.error(data.message);
       }
     } catch (error) {
       toast.error('something went wrong')

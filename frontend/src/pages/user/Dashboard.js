@@ -4,7 +4,7 @@ import MenuUser from '../../components/BasicLayout/MenuUser'
 import { useAuth } from '../../context/authContext'
 import '../../styles/dashcard.css'
 const Dashboard = () => {
-  const [auth] = useAuth();
+  const [auth, setAuth] = useAuth();
   return (
     <Layout title='User Dashboard'> 
         <div className='container-fluid m-3 p-3'>
