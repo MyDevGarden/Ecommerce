@@ -20,7 +20,8 @@ app.use(express.static(join(__dirname, "public", "client")));
 
 //middleware
 app.use(cors());
-app.use(express.json()); //middleware to parsing request body
+//app.use(express.json()); //middleware to parsing request body
+app.use(express.json({ limit: '10mb' }));
 
 app.use(morgan('dev')); //middlware for morgan
 

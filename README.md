@@ -33,7 +33,7 @@ Render
 
 ### Live Demonstration
 The E-commerce demo can be viewed online here.
->[Working Demo](http://www.)
+>[Working Demo](https://ecommerce-plantstore.onrender.com)
 ---
 
 ## Istructions
@@ -44,8 +44,11 @@ The E-commerce demo can be viewed online here.
     Clone the ecommerce-demo repository using git:
 
     https://github.com/MyDevGarden/Ecommerce
+
 2. From Backend folder run ``npm install``
-3. To run the application use ``npm run dev``
+3. To run the application use ``npm run dev`` or ``npm start``
+
+___
 
 ### For Payment getway integration 
 1. #### create a sandbox account by signing in
@@ -54,7 +57,7 @@ The E-commerce demo can be viewed online here.
 2. #### Get your own 'Merchant Id', 'public key' and 'private key'
 3. #### Create a .env file in your backend folder and paste all secret keys in it
 
-### .env file
+### .env file for backend
 
 PORT = 'Port you want to run your server'
 
@@ -69,5 +72,22 @@ BRAINTREE_PRIVATE_KEY = 'your private key'
 
 BRAINTREE_MERCHANT_ID = 'your merchant id'
 
+### .env file for frontend
 
+REACT_APP_API = 'url to your frontend port'
+
+___
+
+### Test Card Nos
+5555555555554444	Mastercard
+
+2223000048400011	Mastercard
+
+4111111111111111	Visa
+
+4005519200000004	Visa
+
+4009348888881881	Visa
+
+### use any future date for expiry
 
