@@ -78,7 +78,7 @@ REACT_APP_API = 'url to your frontend port'
 
 ___
 
-### Test Card Nos
+### Test Card Nos for credit card payments
 5555555555554444	Mastercard
 
 2223000048400011	Mastercard
